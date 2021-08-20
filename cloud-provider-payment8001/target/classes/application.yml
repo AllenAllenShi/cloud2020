@@ -12,6 +12,16 @@ spring:
     username: root
     password: root
 
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #注册进eureka集群
+  instance:
+    instance-id: payment8001
+    prefer-ip-address: true
+
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   type-aliases-package: com.atguigu.springcloud.entities

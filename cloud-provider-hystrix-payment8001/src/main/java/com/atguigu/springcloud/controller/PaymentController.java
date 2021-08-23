@@ -19,7 +19,7 @@ public class PaymentController {
     private String serverPort;
 
     @GetMapping("/payment/hystix/ok/{id}")
-    public String PaymentInfo_OK(@PathVariable Integer id){
+    public String PaymentInfo_OK(@PathVariable("id") Integer id){
 
         String result = paymentService.PaymentInfo_OK(id);
         log.info("**********result: " + result);
@@ -27,10 +27,16 @@ public class PaymentController {
     }
 
     @GetMapping("/payment/hystix/timeout/{id}")
-    public String PaymentInfo_TImeOut(@PathVariable Integer id){
+    public String PaymentInfo_TImeOut(@PathVariable("id") Integer id){
 
         String result = paymentService.PaymentInfo_TimeOut(id);
         log.info("**********result: " + result);
+        return result;
+    }
+    @GetMapping("/payment/circuit/{id}")
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id){
+        String result = paymentService.paymentCircuitBreaker(id);
+        log.info("*************result: "+ result);
         return result;
     }
 }

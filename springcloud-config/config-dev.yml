@@ -1,2 +1,3 @@
 config:
   info: "Test info"
+  version: "v1"

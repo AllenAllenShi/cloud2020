@@ -8,7 +8,7 @@ spring:
     config:
       label: master
       name: config
-      profile: dev
+      profile: prod
       uri: http://localhost:3344
 eureka:
   client:

@@ -9,7 +9,7 @@ spring:
         git:
           uri: git@github.com:AllenAllenShi/cloud2020.git
           search-paths:
-            - cloud2020
+            - springcloud-config
       label: master
 
 eureka:
